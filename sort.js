@@ -8,21 +8,21 @@ for(let i=0;i<length;i++) {
 }
 console.log(Arr)
 
-// 1
+// api
 let Arr1 = Arr.sort((a,b)=>{
 	return a<b
 })
 console.log(Arr1)
 
-// 2
+// 冒泡排序
 let Arr2 = Arr
 for(let i=0;i<=Arr2.length;i++) {
-	for(let j=0;j<=i;j++) {
+	for(let j=0;j<=i-1-i;j++) {
 		console.log([i,j])
 		if(Arr2[i] > Arr[j]) {
-			let a = Arr2[i]
-			Arr[i] = Arr2[j]
-			Arr[j] = a
+			var temp = arr[j+1];
+			arr[j+1] = arr[j];
+			arr[j] = temp;
 		}
 	}
 }
