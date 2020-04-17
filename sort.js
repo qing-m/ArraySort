@@ -47,3 +47,41 @@ function selectionSort(Arr3) {
 	}
 	return arr;
 }
+
+//插入排序
+let Arr4 = Arr
+function insertionSort(Arr4) {
+	var len = Arr4.length;
+	var preIndex, current;
+	for (var i = 1; i < len; i++) {
+			preIndex = i - 1;
+			current = Arr4[i];
+			while(preIndex >= 0 && Arr4[preIndex] > current) {
+				Arr4[preIndex+1] = Arr4[preIndex];
+					preIndex--;
+			}
+			Arr4[preIndex+1] = current;
+	}
+	return Arr4;
+}
+
+//希尔排序
+let Arr5 = Arr
+function shellSort(Arr5) {
+	var len = Arr5.length,
+			temp,
+			gap = 1;
+	while(gap < len/3) {          //动态定义间隔序列
+			gap =gap*3+1;
+	}
+	for (gap; gap > 0; gap = Math.floor(gap/3)) {
+			for (var i = gap; i < len; i++) {
+					temp = Arr5[i];
+					for (var j = i-gap; j >= 0 && Arr5[j] > temp; j-=gap) {
+						Arr5[j+gap] = Arr5[j];
+					}
+					Arr5[j+gap] = temp;
+			}
+	}
+	return Arr5;
+}
